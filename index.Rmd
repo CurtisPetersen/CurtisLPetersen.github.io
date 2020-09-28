@@ -103,18 +103,18 @@ Sidebar {.sidebar}
 -----------------------------------------------------------------------
 
 ### 
-![](/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
+![](images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
 
 <a href="https://www.linkedin.com/in/curtis-petersen/">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="https://github.com/curtisPetersen">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="mailto:CurtisLPetersen@gmail.com">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
 </a>
 
 CurtisLPetersen@gmail.com
@@ -170,7 +170,7 @@ Dates = as.POSIXct(c("1/1/06", "1/1/08", "1/1/10", "1/1/12", "1/1/14", "1/1/16",
 Dates_df = as.data.frame(Dates) %>%
   mutate(Year = as.character(year(Dates)))
 
-Aca_TL = read_csv("/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/Academic_Timeline.csv") %>%
+Aca_TL = read_csv("Academic_Timeline.csv") %>%
   mutate(Start = as.POSIXct(Start, format = "%d/%m/%y"),
          End = as.POSIXct(End, format = "%d/%m/%y"))
 
@@ -288,18 +288,18 @@ Sidebar {.sidebar}
 -----------------------------------------------------------------------
 
 ### 
-![](/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
+![](images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
 
 <a href="https://www.linkedin.com/in/curtis-petersen/">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="https://github.com/curtisPetersen">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="mailto:CurtisLPetersen@gmail.com">
-  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
 </a>
 
 CurtisLPetersen@gmail.com
@@ -310,6 +310,6 @@ Row {data-height=750}
 
 
 ```{r}
-tags$iframe(style="height:1000px; width:100%; scrolling=yes", src = "/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/Curtis_Petersen_CV_Fall_2020.pdf")
+tags$iframe(style="height:1000px; width:100%; scrolling=yes", src = "Curtis_Petersen_CV_Fall_2020.pdf")
 ```
 
