@@ -1,6 +1,5 @@
 ---
 title: "Curtis L. Petersen"
-runtime: shiny
 output:
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
