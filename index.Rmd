@@ -1,0 +1,316 @@
+---
+title: "Curtis L. Petersen"
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    theme: flatly
+---
+
+<style> 
+.navbar {
+  background-color: black;
+  font-size: 20px;
+  font-family: Arial;
+  max-height: 200px;
+}
+
+
+.navbar-author {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.navbar .navbar-nav {float: right; 
+                           color: #3e3e3e; 
+                           font-size: 20px; 
+                           background-color: #000000 ; } 
+      .navbar .navbar-header {float: left; } 
+      .navbar-default .navbar-brand { color: #000000; 
+                                      font-size: 38px; 
+                                      background-color: #000000 ;} 
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #3e3e3e;
+    color: white;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #3e3e3e;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #3e3e3e;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #000000;
+}
+
+.section.sidebar {
+background-color: white;
+}
+
+body {
+  background: #FFFFFF;
+}
+
+.chart-title {  /* chart_title  */
+   font-size: 30px;
+   font-family: Algerian;
+}
+
+.chart-wrapper {
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  
+  # reference: https://github.com/rstudio/flexdashboard/blob/feature/logo-and-favicon/inst/rmarkdown/templates/flex_dashboard/resources/flexdashboard.css
+}
+
+</style>           
+
+
+
+```{r setup, include=FALSE}
+library(shiny)
+library(shinydashboard)
+library(flexdashboard)
+library(lubridate)
+library(leaflet)
+library(plotly)
+library(ggplot2)
+library(tidyverse)
+library(wesanderson)
+library(jpeg)
+library(ggrepel)
+library(scales)
+library(knitr)
+library(shinydashboardPlus)
+library(shinyWidgets)
+```
+
+
+Professional & Academic {data-icon="fa-university"}
+=====================================  
+
+Sidebar {.sidebar}
+-----------------------------------------------------------------------
+
+### 
+![](/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
+
+<a href="https://www.linkedin.com/in/curtis-petersen/">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+</a>
+
+<a href="https://github.com/curtisPetersen">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+</a>
+
+<a href="mailto:CurtisLPetersen@gmail.com">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+</a>
+
+CurtisLPetersen@gmail.com
+
+
+Row {.boxvalues}
+-----------------------------------------------------------------------
+
+### ABOUT ME
+
+Working towards an understanding of behavior and biology is underlies much of sciences most basic questions. I beleive technology is a critial tool in examining these relationships. I enjoy finding solutions to problems and fixing broken systems. 
+
+I've spent time building programs that collect, process, and analyze data of most types. Though not a trained computer scientist I'm driven to teach myself how to make things work. From woodworking and painting to systems and programing I love building things. 
+
+
+I have experience wrangling raw data from claims, peripherally connected Bluetooth devices, apps, arrays, or clinical tests into analytic sets to perform a multitude of statistical and algorithmic methods. I love working in R (this site is build in R Shiny!) but when a task calls for something else I'll usually be able to accomplish it in Python. Like many data nerds I have strong opinions about having good code hygiene with clear annotation and formatting. 
+
+Team work and collaboration are a critical part of almost everything I do. Its important to get everyones perspective and get everyone on board with the what, why, and how of a project and having the patience to do that.
+
+My commitment to team work drives my leadership style. In leadership positions I think it's important to leave your ego at the door and enable everyone to do whatever it is they do best. 
+
+
+Row {}
+-----------------------------------------------------------------------
+
+### ACADEMIC TIMELINE
+
+I have a bachelor's degree in biology, a masters in public health (MPH), an MS, and a PhD. Each degree has given me a different perspective on research, work, and finding solutions and anwsers. Here's how it played out over time:
+
+Row {}
+-----------------------------------------------------------------------
+
+
+```{r}
+c_trans <- function(a, b, breaks = b$breaks, format = b$format) {
+  a <- as.trans(a)
+  b <- as.trans(b)
+
+  name <- paste(a$name, b$name, sep = "-")
+
+  trans <- function(x) a$trans(b$trans(x))
+  inv <- function(x) b$inverse(a$inverse(x))
+
+  trans_new(name, trans, inverse = inv, breaks = breaks, format=format)
+
+}
+
+rev_date <- c_trans("reverse", "time")
+
+
+Dates = as.POSIXct(c("1/1/06", "1/1/08", "1/1/10", "1/1/12", "1/1/14", "1/1/16", "1/1/18", "1/1/20"), format = "%d/%m/%y")
+
+Dates_df = as.data.frame(Dates) %>%
+  mutate(Year = as.character(year(Dates)))
+
+Aca_TL = read_csv("/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/Academic_Timeline.csv") %>%
+  mutate(Start = as.POSIXct(Start, format = "%d/%m/%y"),
+         End = as.POSIXct(End, format = "%d/%m/%y"))
+
+Aca_TL1 = Aca_TL %>%
+  filter(Event != "Masters in Biomedical Data Science")
+
+Aca_TL2 = Aca_TL %>%
+  filter(Event == "Masters in Biomedical Data Science")
+
+Title = c("")
+
+wrapper <- function(x, ...) 
+{
+  paste(strwrap(x, ...), collapse = "\n")
+}
+
+# PLOT
+
+    timeline_plot <- ggplot(Aca_TL1, aes(x = 0, y = End)) +
+      geom_point(data = Dates_df, aes(x = 0, y = Dates), shape = 3, color = "black", size = 1) +
+      geom_text(data = Dates_df, aes(x = 0, y = Dates, label = Year), hjust = -.4, vjust = .5, size = 4, color = "gray40") +
+      geom_text_repel(aes(label = Event), nudge_x = -0.34) +
+      geom_vline(xintercept = 0, color = "black", size = .4) +
+      geom_point(aes(x = 0, y = End, color = Event), size = 3) +
+      geom_point(data = Aca_TL2, aes(x = -.05, y = End, color = Event), size = 3) +
+      #geom_text_repel(data = Aca_TL2, aes(label = Event), nudge_x = -0.3) +
+      geom_text(data = Aca_TL2, aes(label = Event), nudge_x = -0.55) +
+      xlim(c(-1, 1)) +
+      # Reverse y axis
+      scale_y_continuous(trans = rev_date) +
+      geom_segment(aes(y = Start, yend = End, xend = 0, color = Event), size = 2) + #size ændre fra 0.2 til 0.1
+      geom_segment(data = Aca_TL2, aes(y = Start, yend = End, x = -.05, xend = -.05, color = Event), size = 2) + #size ændre fra 0.2 til 0.1
+      #geom_linerange(aes(ymin = Start, ymax = End), position = position_dodge(.33)) +
+      theme_classic() + 
+      ggtitle(wrapper(Title, width = 75)) +
+      scale_color_manual(values = wes_palette("Cavalcanti1", n = 4)) +
+      theme(axis.line.y=element_blank(),
+            axis.text.y=element_blank(),
+            axis.title.x=element_blank(),
+            axis.title.y=element_blank(),
+            axis.ticks.y=element_blank(),
+            axis.text.x =element_blank(),
+            axis.ticks.x =element_blank(),
+            axis.line.x =element_blank(),
+            legend.position = "none",
+            plot.title = element_text(size = 11)
+    )
+
+
+    timeline_plot
+```
+
+
+Row {}
+-----------------------------------------------------------------------
+
+### PROJECTS 
+
+I've been part of a bunch of projects! Most have been published so please see my publications for the most details. Here are some broad topics.
+ 
+* Mobile health for obesity wellness intervention 
+    + Managed bio sample collection
+    + Examined changes in methlyation based biological age
+    + Examined changes in physcial activities in older obese adults
+    + Examined feasibilty and acceptability of mHealth use in older adults
+ 
+* Examining DNA methylation in Panic Disorder
+    + Examination of differences in immune cell type proportions in Panic Disorder
+    + Examination of differences in genome wide CpG methylation differences in Panic Disorder
+ 
+* Sarcopenia In Older Adults
+    + Cross sectional analysis using NHANES data
+    + Association with Depression
+    + Association with Food Insecurity 
+
+* Development of a Bluetooth enabled resistance band
+    + Lead a development to build an app to capture data
+    + Secured funding through NIH STTR phase 1
+    + Developed data analytic pipelines for use
+    + Founder of SyncroHealth 
+
+* Development of a remote medical sensing company
+    + I helped start ImagineCare by building the first version of their backend logic.
+    + We went from discussing the concept in a closet to building an application and system that aggregated sensor and questionnaire data!
+
+* Carotid Artery Dissection
+    + Using claims data from Centers For Medicare and Medicaide I've examined the association of carotid artery dissection with other diagnosis to examine when it occurs.
+    + Examined how it might be associated with spinal manipulation.
+
+* Food Security
+    + Cross sectional analysis using NHANES data
+    + Association with Depression
+    + Association with Sarcopenia
+
+* Use of a EHR embeded decision aid for stroke previention in atrial fibrillation
+    + Wrangled data to examine use of decision aid
+    + Conducted statistical analysis on use of decision aid 
+
+* Natural language processing of patient education materials
+    + Custom construct labels
+
+* Changing medication use in elderly in nursing homes
+    + Examined lonitudinal use of medications in those with and without dementia
+    + Worked with industry partners to anwser questions on use
+    
+* Lead student government as President of the Graduate Student Council
+    + I lead efforts create the first diversity leadership chair
+    + Worked with administration to provide leadership training for faculty mentors
+    
+
+CV {data-icon="fa-file-invoice"} 
+=====================================  
+
+Sidebar {.sidebar}
+-----------------------------------------------------------------------
+
+### 
+![](/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
+
+<a href="https://www.linkedin.com/in/curtis-petersen/">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+</a>
+
+<a href="https://github.com/curtisPetersen">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+</a>
+
+<a href="mailto:CurtisLPetersen@gmail.com">
+  <img src="/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+</a>
+
+CurtisLPetersen@gmail.com
+
+
+Row {data-height=750}
+-----------------------------------------------------------------------
+
+
+```{r}
+tags$iframe(style="height:1000px; width:100%; scrolling=yes", src = "/Users/cpetersen/Google Drive/Personal/Website/Curtis_Petersen/Curtis_Petersen_CV_Fall_2020.pdf")
+```
+
