@@ -73,6 +73,14 @@ body {
   # reference: https://github.com/rstudio/flexdashboard/blob/feature/logo-and-favicon/inst/rmarkdown/templates/flex_dashboard/resources/flexdashboard.css
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
 </style>           
 
 
@@ -106,15 +114,15 @@ Sidebar {.sidebar}
 ![](images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
 
 <a href="https://www.linkedin.com/in/curtis-petersen/">
-  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="https://github.com/curtisPetersen">
-  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="mailto:CurtisLPetersen@gmail.com">
-  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 CurtisLPetersen@gmail.com
@@ -291,15 +299,15 @@ Sidebar {.sidebar}
 ![](images/Petersen_Curtis_TDI_Head_Shot_Circ.png){#id .class width=99% height=99%}
 
 <a href="https://www.linkedin.com/in/curtis-petersen/">
-  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" style="width:42px;height:42px;border:20px;">
+  <img src="images/linkedin.svg" alt="Curtis Petersen LinkedIn" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="https://github.com/curtisPetersen">
-  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" style="width:42px;height:42px;border:20px;">
+  <img src="images/GitHub_Icon.png" alt="Curtis Petersen GitHub" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 <a href="mailto:CurtisLPetersen@gmail.com">
-  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" style="width:42px;height:42px;border:20px;">
+  <img src="images/envelope-open-text.svg" alt="Curtis Petersen Email" class="center" style="width:42px;height:42px;border:20px;">
 </a>
 
 CurtisLPetersen@gmail.com
@@ -310,6 +318,6 @@ Row {data-height=750}
 
 
 ```{r}
-tags$iframe(style="height:1000px; width:100%; scrolling=yes", src = "Curtis_Petersen_CV_Fall_2020.pdf")
+tags$iframe(style="height:1000px; width:100%; scrolling=yes", src = "Curtis_Petersen_CV.pdf")
 ```
 
