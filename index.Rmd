@@ -133,14 +133,16 @@ Row {.boxvalues}
 
 ### ABOUT ME
 
-Working towards an understanding of behavior and biology is underlies much of sciences most basic questions. I beleive technology is a critial tool in examining these relationships. I enjoy finding solutions to problems and fixing broken systems. 
+I work towards understanding the relationship between behavior and biology as it underlies much of science's most basic questions. I believe technology is a critical tool in examining these relationships. I enjoy finding solutions to problems and fixing broken systems. 
 
-I've spent time building programs that collect, process, and analyze data of most types. Though not a trained computer scientist I'm driven to teach myself how to make things work. From woodworking and painting to systems and programing I love building things. 
+Currently, I spend the majority of my time as Co-founder and Chief Product Officer at Ucardia where I build a system that provides patients with virtual cardiac rehabilitation. I'm so proud to be bringing cardiac rehabilitation into a new data driven, digital era!
+
+I've spent time building programs that collect, process, and analyze data of most types. Though not a trained computer scientist I'm driven to teach myself how to make things work. From woodworking and canvas painting to system development and analytic pipelines I love building things. 
 
 
-I have experience wrangling raw data from claims, peripherally connected Bluetooth devices, apps, arrays, or clinical tests into analytic sets to perform a multitude of statistical and algorithmic methods. I love working in R (this site is build in R Shiny!) but when a task calls for something else I'll usually be able to accomplish it in Python. Like many data nerds I have strong opinions about having good code hygiene with clear annotation and formatting. 
+I have experience wrangling raw data from claims, peripherally connected Bluetooth devices, apps, arrays, or clinical tests into analytic sets to perform a multitude of statistical and algorithmic methods. I love working in R (this site is build in R) but when a task calls for something else I'll usually be able to accomplish it in Python. Like many data nerds I have strong opinions about having good code hygiene with clear annotation and formatting - so if you feel like  
 
-Team work and collaboration are a critical part of almost everything I do. Its important to get everyones perspective and get everyone on board with the what, why, and how of a project and having the patience to do that.
+Team work and collaboration are a critical part of almost everything I do. Its important to get a different perspective and get everyone on board with the what, why, and how of a project and having the patience to do that.
 
 My commitment to team work drives my leadership style. In leadership positions I think it's important to leave your ego at the door and enable everyone to do whatever it is they do best. 
 
@@ -150,7 +152,7 @@ Row {}
 
 ### ACADEMIC TIMELINE
 
-I have a bachelor's degree in biology, a masters in public health (MPH), an MS, and a PhD. Each degree has given me a different perspective on research, work, and finding solutions and anwsers. Here's how it played out over time:
+I have a bachelor's degree in biology, a masters in public health (MPH), an MS, and a PhD. Each degree has given me a different perspective on research, work, and finding solutions and answers. Here's how it played out over time:
 
 Row {}
 -----------------------------------------------------------------------
@@ -242,8 +244,8 @@ I've been part of a bunch of projects! Most have been published so please see my
 * Mobile health for obesity wellness intervention 
     + Managed bio sample collection
     + Examined changes in methlyation based biological age
-    + Examined changes in physcial activities in older obese adults
-    + Examined feasibilty and acceptability of mHealth use in older adults
+    + Examined changes in physical activities in older obese adults
+    + Examined feasibility and acceptability of mHealth use in older adults
  
 * Examining DNA methylation in Panic Disorder
     + Examination of differences in immune cell type proportions in Panic Disorder
@@ -265,15 +267,19 @@ I've been part of a bunch of projects! Most have been published so please see my
     + We went from discussing the concept in a closet to building an application and system that aggregated sensor and questionnaire data!
 
 * Carotid Artery Dissection
-    + Using claims data from Centers For Medicare and Medicaide I've examined the association of carotid artery dissection with other diagnosis to examine when it occurs.
+    + Using claims data from Centers For Medicare and Medicaid I've examined the association of carotid artery dissection with other diagnosis to examine when it occurs.
     + Examined how it might be associated with spinal manipulation.
+
+* Mortality Prediction 
+    + Using claims data from Centers For Medicare and Medicaid I've developed prediction models for mortality from inpatient and outpatient utilization.
+    + Machine learning and big data analytic pipeline.
 
 * Food Security
     + Cross sectional analysis using NHANES data
     + Association with Depression
     + Association with Sarcopenia
 
-* Use of a EHR embeded decision aid for stroke previention in atrial fibrillation
+* Use of a EHR embedded decision aid for stroke prevention in atrial fibrillation
     + Wrangled data to examine use of decision aid
     + Conducted statistical analysis on use of decision aid 
 
@@ -281,12 +287,13 @@ I've been part of a bunch of projects! Most have been published so please see my
     + Custom construct labels
 
 * Changing medication use in elderly in nursing homes
-    + Examined lonitudinal use of medications in those with and without dementia
-    + Worked with industry partners to anwser questions on use
+    + Examined longitudinal use of medications in those with and without dementia
+    + Worked with industry partners to answer questions on use
     
 * Lead student government as President of the Graduate Student Council
-    + I lead efforts create the first diversity leadership chair
+    + I led efforts to create the first diversity leadership chair
     + Worked with administration to provide leadership training for faculty mentors
+    + Advocated for new graduate housing
     
 
 CV {data-icon="fa-file-invoice"} 
