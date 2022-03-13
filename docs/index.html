@@ -21,12 +21,22 @@
 window.FlexDashboardComponents = [];
 </script>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11.3/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -2676,7 +2686,7 @@ body {
 <div id="professional-academic" class="section level1" data-icon="fa-university">
 <h1>Professional &amp; Academic</h1>
 <div id="sidebar" class="section level2 sidebar">
-<h2>Sidebar</h2>
+<h2 class="sidebar">Sidebar</h2>
 <div id="section" class="section level3">
 <h3></h3>
 <p><img src="images/Petersen_Curtis_TDI_Head_Shot_Circ.png" id="id" class="class" style="width:99.0%;height:99.0%" /></p>
@@ -2687,13 +2697,14 @@ body {
 </div>
 </div>
 <div id="row" class="section level2 boxvalues">
-<h2>Row</h2>
+<h2 class="boxvalues">Row</h2>
 <div id="about-me" class="section level3">
 <h3>ABOUT ME</h3>
-<p>Working towards an understanding of behavior and biology is underlies much of sciences most basic questions. I beleive technology is a critial tool in examining these relationships. I enjoy finding solutions to problems and fixing broken systems.</p>
-<p>I’ve spent time building programs that collect, process, and analyze data of most types. Though not a trained computer scientist I’m driven to teach myself how to make things work. From woodworking and painting to systems and programing I love building things.</p>
-<p>I have experience wrangling raw data from claims, peripherally connected Bluetooth devices, apps, arrays, or clinical tests into analytic sets to perform a multitude of statistical and algorithmic methods. I love working in R (this site is build in R Shiny!) but when a task calls for something else I’ll usually be able to accomplish it in Python. Like many data nerds I have strong opinions about having good code hygiene with clear annotation and formatting.</p>
-<p>Team work and collaboration are a critical part of almost everything I do. Its important to get everyones perspective and get everyone on board with the what, why, and how of a project and having the patience to do that.</p>
+<p>I work towards understanding the relationship between behavior and biology as it underlies much of science’s most basic questions. I believe technology is a critical tool in examining these relationships. I enjoy finding solutions to problems and fixing broken systems.</p>
+<p>Currently, I spend the majority of my time as Co-founder and Chief Product Officer at Ucardia where I build a system that provides patients with virtual cardiac rehabilitation. I’m so proud to be bringing cardiac rehabilitation into a new data driven, digital era!</p>
+<p>I’ve spent time building programs that collect, process, and analyze data of most types. Though not a trained computer scientist I’m driven to teach myself how to make things work. From woodworking and canvas painting to system development and analytic pipelines I love building things.</p>
+<p>I have experience wrangling raw data from claims, peripherally connected Bluetooth devices, apps, arrays, or clinical tests into analytic sets to perform a multitude of statistical and algorithmic methods. I love working in R (this site is build in R) but when a task calls for something else I’ll usually be able to accomplish it in Python. Like many data nerds I have strong opinions about having good code hygiene with clear annotation and formatting - so if you feel like</p>
+<p>Team work and collaboration are a critical part of almost everything I do. Its important to get a different perspective and get everyone on board with the what, why, and how of a project and having the patience to do that.</p>
 <p>My commitment to team work drives my leadership style. In leadership positions I think it’s important to leave your ego at the door and enable everyone to do whatever it is they do best.</p>
 </div>
 </div>
@@ -2701,7 +2712,7 @@ body {
 <h2>Row</h2>
 <div id="academic-timeline" class="section level3">
 <h3>ACADEMIC TIMELINE</h3>
-<p>I have a bachelor’s degree in biology, a masters in public health (MPH), an MS, and a PhD. Each degree has given me a different perspective on research, work, and finding solutions and anwsers. Here’s how it played out over time:</p>
+<p>I have a bachelor’s degree in biology, a masters in public health (MPH), an MS, and a PhD. Each degree has given me a different perspective on research, work, and finding solutions and answers. Here’s how it played out over time:</p>
 </div>
 </div>
 <div id="row-2" class="section level2">
@@ -2721,8 +2732,8 @@ body {
 <ul>
 <li>Managed bio sample collection</li>
 <li>Examined changes in methlyation based biological age</li>
-<li>Examined changes in physcial activities in older obese adults</li>
-<li>Examined feasibilty and acceptability of mHealth use in older adults</li>
+<li>Examined changes in physical activities in older obese adults</li>
+<li>Examined feasibility and acceptability of mHealth use in older adults</li>
 </ul></li>
 <li>Examining DNA methylation in Panic Disorder
 <ul>
@@ -2749,8 +2760,13 @@ body {
 </ul></li>
 <li>Carotid Artery Dissection
 <ul>
-<li>Using claims data from Centers For Medicare and Medicaide I’ve examined the association of carotid artery dissection with other diagnosis to examine when it occurs.</li>
+<li>Using claims data from Centers For Medicare and Medicaid I’ve examined the association of carotid artery dissection with other diagnosis to examine when it occurs.</li>
 <li>Examined how it might be associated with spinal manipulation.</li>
+</ul></li>
+<li>Mortality Prediction
+<ul>
+<li>Using claims data from Centers For Medicare and Medicaid I’ve developed prediction models for mortality from inpatient and outpatient utilization.</li>
+<li>Machine learning and big data analytic pipeline.</li>
 </ul></li>
 <li>Food Security
 <ul>
@@ -2758,7 +2774,7 @@ body {
 <li>Association with Depression</li>
 <li>Association with Sarcopenia</li>
 </ul></li>
-<li>Use of a EHR embeded decision aid for stroke previention in atrial fibrillation
+<li>Use of a EHR embedded decision aid for stroke prevention in atrial fibrillation
 <ul>
 <li>Wrangled data to examine use of decision aid</li>
 <li>Conducted statistical analysis on use of decision aid</li>
@@ -2769,13 +2785,14 @@ body {
 </ul></li>
 <li>Changing medication use in elderly in nursing homes
 <ul>
-<li>Examined lonitudinal use of medications in those with and without dementia</li>
-<li>Worked with industry partners to anwser questions on use</li>
+<li>Examined longitudinal use of medications in those with and without dementia</li>
+<li>Worked with industry partners to answer questions on use</li>
 </ul></li>
 <li>Lead student government as President of the Graduate Student Council
 <ul>
-<li>I lead efforts create the first diversity leadership chair</li>
+<li>I led efforts to create the first diversity leadership chair</li>
 <li>Worked with administration to provide leadership training for faculty mentors</li>
+<li>Advocated for new graduate housing</li>
 </ul></li>
 </ul>
 </div>
@@ -2784,7 +2801,7 @@ body {
 <div id="cv" class="section level1" data-icon="fa-file-invoice">
 <h1>CV</h1>
 <div id="sidebar-1" class="section level2 sidebar">
-<h2>Sidebar</h2>
+<h2 class="sidebar">Sidebar</h2>
 <div id="section-1" class="section level3">
 <h3></h3>
 <p><img src="images/Petersen_Curtis_TDI_Head_Shot_Circ.png" id="id" class="class" style="width:99.0%;height:99.0%" /></p>
@@ -2799,7 +2816,7 @@ body {
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<iframe style="height:1000px; width:100%; scrolling=yes" src="Curtis_Petersen_CV.pdf"></iframe>
+<p><iframe style="height:1000px; width:100%; scrolling=yes" src="Curtis_Petersen_CV.pdf"></iframe></p>
 </div>
 </div>
 
